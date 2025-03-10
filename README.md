@@ -1,8 +1,8 @@
-# Simulación de Subastas con Teoría de Juegos
+# Game Theory Auction Simulation
 
-Este proyecto implementa diferentes tipos de subastas (Inglesa, Holandesa, Primer Precio, Vickrey) utilizando teoría de juegos y estrategias de puja en Python.
+This project implements different types of auctions (English, Dutch, First Price, Vickrey) using game theory and bidding strategies in Python.
 
-## Estructura del Proyecto
+## Project Structure
 
 subasta-teoria-juegos/
 │── src/                     # Código fuente
