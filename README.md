@@ -1,3 +1,4 @@
+refinamiento-simulacion
 ## Proyecto: Simulación de Subastas con Teoría de Juegos
 
 **Descripción:**  
