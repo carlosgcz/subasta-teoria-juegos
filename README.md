@@ -1,4 +1,3 @@
-refinamiento-simulacion
 ## Proyecto: Simulación de Subastas con Teoría de Juegos
 
 **Descripción:**  
@@ -27,41 +26,45 @@ Es ideal usar un entorno virtual (por ejemplo, Conda o virtualenv) para aislar l
 
 **Dependencias Python:**  
 Instala las siguientes bibliotecas en tu entorno:
-
+```bash
 pip install matplotlib pytest
-
+```
 ---
 ## Instalación y Configuración
 
 **Clonar el Repositorio:**
-
-git clone https://github.com/tu_usuario/subasta-teoria-juegos.git
+```bash
+git clone https://github.com/tu_usuario/subasta-teoria-juegos.git  
 cd subasta-teoria-juegos
+```
 
 ---
 **Crear y Activar el Entorno Virtual (opcional pero recomendado):**
 
-- Con Conda:
+- **Con Conda:**
+```bash
+conda create -n subasta-env python=3.11  
+conda activate subasta-env  
+pip install matplotlib pytest
+```
 
-  conda create -n subasta-env python=3.11
-  conda activate subasta-env
-  pip install matplotlib pytest
-
-- O con virtualenv:
-
-  python -m venv env
-  # En Windows:
-  env\Scripts\activate
-  pip install matplotlib pytest
-
+- **O con virtualenv:**
+```bash
+python -m venv env
+```
+**En Windows:**
+```bash
+env\Scripts\activate  
+pip install matplotlib pytest
+```
 ---
 ## Uso del Proyecto
 
 **Ejecutar la Simulación:**  
 Para correr la simulación y ver el resultado, ejecuta:
-
+```bash
 python main.py
-
+```
 Este comando:
 - Ejecuta múltiples subastas (definidas en src/simulacion.py).
 - Exporta las estadísticas a un archivo CSV (estadisticas_subastas.csv).
@@ -70,41 +73,41 @@ Este comando:
 ---
 **Ejecutar Scripts de Prueba:**
 
-- Script de Prueba de Subasta Individual:  
+- **Script de Prueba de Subasta Individual:**  
   Puedes ejecutar el script prueba_subasta.py para probar una subasta en forma aislada y ver la evolución de las ofertas:
-
+```bash
   python prueba_subasta.py
-
-- Pruebas Unitarias con Pytest:  
+```
+- **Pruebas Unitarias con Pytest:**  
   Para correr todas las pruebas unitarias, usa:
-
+```bash
   python -m pytest -v
-
+```
 ---
 ## Estructura del Proyecto
 
-subasta-teoria-juegos/
-│
-├── src/                        # Código fuente
-│   ├── __init__.py             # Marca el paquete 'src'
-│   ├── modelos/                # Módulo para las clases de dominio
-│   │   ├── __init__.py         # Marca el subpaquete 'modelos'
-│   │   ├── jugador.py          # Clase Jugador y lógica de pujas
-│   │   ├── subasta.py          # Implementación de la subasta inglesa
-│   │   └── estrategias.py      # Estrategias de puja (Aleatoria, Agresiva, Conservadora, Dummy)
-│   ├── simulacion.py           # Orquesta la ejecución de múltiples subastas y exporta estadísticas a CSV
-│   └── visualizacion.py        # Funciones para generar gráficos (barras, evolución, etc.)
-│
-├── tests/                      # Pruebas unitarias
-│   ├── test_jugador.py         # Tests para la clase Jugador
-│   ├── test_subasta.py         # Tests para la lógica de la subasta
-│   └── test_simulacion_csv.py  # Test para la exportación a CSV (opcional)
-│
-├── main.py                     # Punto de entrada principal del proyecto
-├── README.md                   # Documentación del proyecto (este archivo)
-├── pytest.ini                  # Configuración de Pytest
-├── requirements.txt            # Archivo para dependencias (actualizado según sea necesario)
-├── prueba.py                   # Script de prueba simple (opcional)
+subasta-teoria-juegos/  
+│  
+├── src/                        # Código fuente  
+│   ├── __init__.py             # Marca el paquete 'src'  
+│   ├── modelos/                # Módulo para las clases de dominio  
+│   │   ├── __init__.py         # Marca el subpaquete 'modelos'  
+│   │   ├── jugador.py          # Clase Jugador y lógica de pujas  
+│   │   ├── subasta.py          # Implementación de la subasta inglesa  
+│   │   └── estrategias.py      # Estrategias de puja (Aleatoria, Agresiva, Conservadora, Dummy)  
+│   ├── simulacion.py           # Orquesta la ejecución de múltiples subastas y exporta estadísticas a CSV  
+│   └── visualizacion.py        # Funciones para generar gráficos (barras, evolución, etc.)  
+│  
+├── tests/                      # Pruebas unitarias  
+│   ├── test_jugador.py         # Tests para la clase Jugador  
+│   ├── test_subasta.py         # Tests para la lógica de la subasta  
+│   └── test_simulacion_csv.py  # Test para la exportación a CSV (opcional)  
+│  
+├── main.py                     # Punto de entrada principal del proyecto  
+├── README.md                   # Documentación del proyecto (este archivo)  
+├── pytest.ini                  # Configuración de Pytest  
+├── requirements.txt            # Archivo para dependencias (actualizado según sea necesario)  
+├── prueba.py                   # Script de prueba simple (opcional)  
 └── prueba_subasta.py           # Script para probar una subasta individual (con visualización)
 
 Cada carpeta y archivo tiene un rol específico para mantener el código modular, escalable y fácil de probar.
@@ -114,11 +117,11 @@ Cada carpeta y archivo tiene un rol específico para mantener el código modular
 
 La simulación genera un archivo CSV llamado estadisticas_subastas.csv que contiene:
 
-- SubastaID: Identificador de cada subasta.
-- Ganador: Nombre del jugador ganador.
-- EstrategiaGanadora: Estrategia usada por el ganador.
-- OfertaGanadora: Oferta final ganadora.
-- NumRondas: Número de rondas que duró la subasta.
+- SubastaID: Identificador de cada subasta.  
+- Ganador: Nombre del jugador ganador.  
+- EstrategiaGanadora: Estrategia usada por el ganador.  
+- OfertaGanadora: Oferta final ganadora.  
+- NumRondas: Número de rondas que duró la subasta.  
 
 Este archivo sirve para análisis estadísticos posteriores y para evaluar el comportamiento de las estrategias de puja.
 
@@ -127,11 +130,11 @@ Este archivo sirve para análisis estadísticos posteriores y para evaluar el co
 
 Se incluyen funciones para:
 
-- **Gráfico de Barras:**  
-  Compara el número de victorias por estrategia.
+**Gráfico de Barras:**  
+Compara el número de victorias por estrategia.
 
-- **Gráfico de Evolución:**  
-  Muestra la evolución de la mejor oferta a lo largo de las rondas de una subasta individual (consulta graficar_evolucion en src/visualizacion.py).
+**Gráfico de Evolución:**  
+Muestra la evolución de la mejor oferta a lo largo de las rondas de una subasta individual (consulta graficar_evolucion en src/visualizacion.py).
 
 ---
 ## Documentación Interna
@@ -147,26 +150,26 @@ Se incluyen funciones para:
 
 Si deseas contribuir:
 
-1. Haz un fork del repositorio.
-2. Crea una rama para tus cambios.
-3. Realiza tus mejoras y añade pruebas unitarias.
+1. Haz un fork del repositorio.  
+2. Crea una rama para tus cambios.  
+3. Realiza tus mejoras y añade pruebas unitarias.  
 4. Envía un Pull Request describiendo tus cambios.
 
 ---
 ## Próximos Pasos
 
-- Refinar la lógica de la subasta: Agregar nuevos tipos de subastas (Holandesa, Primer Precio, Vickrey) y estrategias avanzadas.
-- Ampliar la visualización: Crear dashboards interactivos o gráficos adicionales para un análisis más profundo.
+- Refinar la lógica de la subasta: Agregar nuevos tipos de subastas (Holandesa, Primer Precio, Vickrey) y estrategias avanzadas.  
+- Ampliar la visualización: Crear dashboards interactivos o gráficos adicionales para un análisis más profundo.  
 - Análisis de datos: Exportar y analizar las estadísticas con pandas o Jupyter Notebook.
 
 ---
 ## Instrucciones Finales
 
-1. **Instalación:**  
-   Sigue las instrucciones de la sección de Instalación para configurar tu entorno.
+**Instalación:**  
+Sigue las instrucciones de la sección de Instalación para configurar tu entorno.
 
-2. **Ejecución:**  
-   Corre el proyecto con python main.py y ejecuta los tests con python -m pytest -v.
+**Ejecución:**  
+Corre el proyecto con ```python main.py``` y ejecuta los tests con python ```-m pytest -v```.
 
-3. **Exportación CSV:**  
-   Revisa el archivo estadisticas_subastas.csv para ver los resultados de las subastas.
+**Exportación CSV:**  
+Revisa el archivo estadisticas_subastas.csv para ver los resultados de las subastas.
