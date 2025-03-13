@@ -6,7 +6,7 @@ env/
 __pycache__/
 *.pyc
 
-# Archivos de sistema (por ejemplo, de macOS)
+# Archivos de sistema 
 .DS_Store
 
 # Archivos de Jupyter Notebook checkpoints
