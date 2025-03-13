@@ -65,7 +65,7 @@ class Simulacion:
                     "EstrategiaGanadora": estrategia_ganadora,
                     "OfertaGanadora": ganador.oferta_final,
                     "NumRondas": subasta.num_rondas
-                    # Puedes incluir "HistorialOfertas": subasta.historial_ofertas, si deseas
+                    # Proxima versión, incluir: "HistorialOfertas": subasta.historial_ofertas
                 })
         
         return self.analizar_resultados()
